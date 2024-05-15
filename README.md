@@ -123,24 +123,3 @@ To deploy new structures in production (IE mapping update):
 ```
 make migrate
 ```
-
-# BASICS
-
-## How the backend it has been created
-```
-docker run --rm  --volume=`pwd`/app:/usr/src/app/:rw test_remote/php:8.0-v4-apache -- bash -c "cd '/usr/src/app/' && composer create-project symfony/skeleton backend"
-```
-
-## Install composer package inside the project
-```
-docker run --rm  --volume=`pwd`/app/backend:/usr/src/app/:rw test_remote/php:8.0-v4-apache -- bash -c "cd '/usr/src/app/' && composer require mypackage"
-```
-
-## Run a command
-```
-docker run --rm  --volume=`pwd`/app/backend:/usr/src/app/:rw test_remote/php:8.0-v4-apache -- bash -c "cd '/usr/src/app/' && php bin/console debug:config monolog"
-```
-
-## Must to read
-
-https://symfony.com/doc/current/configuration.html#configuration-environments
