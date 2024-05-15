@@ -1,0 +1,59 @@
+
+
+login:
+  path: /api/login
+  controller: App\Controller\SecurityController::login
+  methods: ['POST']
+
+logout:
+    path: /logout
+
+api_transactions:
+    path: /api/transactions
+    controller: App\Controller\TransactionController::getTransactions
+    methods: [GET]
+
+transactions_list:
+    path: /transactions
+    controller: App\Controller\TransactionController::listTransactions
+    methods: ['GET']
+
+transaction_localization:
+    path: /api/transactions/localization
+    controller: App\Controller\TransactionController::handleTransactionLocalization
+    methods: [POST]
+
+api_locations:
+    path: /api/locations
+    controller: App\Controller\TransactionController::getNearbyLocations
+    methods: [GET]
+
+dashboard:
+    path: /api/dashboard
+    controller: App\Controller\DashboardController::dashboard
+    methods: [GET]
+
+admin_users:
+    path: /api/admin/users
+    controller: App\Controller\AdminUserController::getUsers
+    methods: [GET]
+
+transactions:
+  path: '/transactions'
+  controller: 'App\Controller\TransactionController::index'
+  methods: ['GET']
+
+transaction_create:
+  path: '/transactions'
+  controller: 'App\Controller\TransactionController::create'
+  methods: ['POST']
+
+transaction_update:
+  path: '/transactions/{id}'
+  controller: 'App\Controller\TransactionController::update'
+  methods: ['PUT']
+
+transaction_delete:
+  path: '/transactions/{id}'
+  controller: 'App\Controller\TransactionController::delete'
+  methods: ['DELETE']
